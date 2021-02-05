@@ -15,7 +15,9 @@ $dico = explode("\n", $string);
 //    }
 //}
 //
-//echo $i." mots font 15 car";
+////echo $i." mots font 15 car";
+//
+//echo "<br>";
 
 //// contiennent w ?
 //$w = 0;
@@ -26,14 +28,29 @@ $dico = explode("\n", $string);
 //}
 //
 //echo $w." mots contiennent la lettre w";
+//
+//echo "<br>";
+//
+//$q = 0;
+//foreach ($dico as $word){
+//    $word = trim($word);
+//    $pos = stripos($word, "q", -1);
+//    if($pos){
+//        $q++;
+//    }
+//}
+//echo $q." mots finissent par la lettre q";
+//
+//echo "<br>";
 
-$q = 0;
-foreach ($dico as $word){
-    $word = trim($word);
-    $pos = stripos($word, "q", -1);
-    if($pos){
-        $q++;
-    }
-}
-echo $q;
+$string = file_get_contents("films.json", FILE_USE_INCLUDE_PATH);
+$brut = json_decode($string, true);
+$top = $brut["feed"]["entry"]; # liste de films
+
+// top 10
+//$x = 1;
+//for ($i = 0 ; $i < 10 ; $i++){
+//    echo $x." ".$top[$i]["im:name"]["label"]."<br>";
+//    $x++;
+//}
 
