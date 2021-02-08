@@ -63,7 +63,16 @@ for ($i = 0 ; $i < count($top) ; $i++){
 
 for ($r = 0 ; $r < count($top) ; $r++){
     if( $top[$r]["im:name"]["label"] === "The LEGO Movie") {
-        echo "The LEGO Movie - réalisation : ".$top[$r]["im:artist"]["label"];
+        echo "The LEGO Movie - réalisation : ".$top[$r]["im:artist"]["label"]."<br>";
     }
 }
 
+$n = 0;
+for($s = 0 ; $s < count($top) ; $s++){
+    $date = $top[$s]["im:releaseDate"]["attributes"]["label"];
+    $year = substr($date, -4);
+    if($year <= 1999){
+       $n++;
+    }
+}
+echo $n." films sont sorties avant 2000";
